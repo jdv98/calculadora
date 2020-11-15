@@ -1,14 +1,14 @@
 def ipAddressClass(ip):
     ip=int(ip.split('.')[0])
-    if(1<=ip or ip>=127):
-        print("Clase A")
-    elif(128<=ip or ip>=191):
+    if(1<=ip and ip<=127):
+            print("Clase A")
+    elif(128<=ip and ip<=191):
         print("Clase B")
-    elif(192<=ip or ip>=223):
+    elif(192<=ip and ip<=223):
         print("Clase C")
-    elif(224<=ip or ip>=239):
+    elif(224<=ip and ip<=239):
         print("Clase D")
-    elif(240<=ip or ip>=255):
+    elif(240<=ip and ip<=255):
         print("Clase E")
 
 
