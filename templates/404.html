@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link rel="icon" href="{{ url_for('static', filename='VW.png') }}">
+    <title>Error 404</title>
+
+    <style>
+        .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body style="text-align: center; ">
+
+    <div class="center" >
+        
+        <hr>
+        <p>Error 404. Página no encontrada.</p>
+        <div class="container" style="width: 200px; height: 200px; background-image: url(/static/404.png); background-position: center; background-size: 200px; background-repeat: no-repeat;">
+            
+        </div>
+        <p >Nos disculpamos por las molestias.</p>
+        <hr>
+    </div>
+    
+</body>
+</html>
