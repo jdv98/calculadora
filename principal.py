@@ -21,6 +21,7 @@ def receive(ip,prefijo):
     resultado['ultimaip']=calcLastIP(resultado['difusion'])               #LastIP
     resultado['cantidaddirecciones']=amountAddresses(resultado['mask'])
     resultado['tipoclaseip']=ipAddressClass(resultado['ip'])
+    resultado['segmento']=networkHost(ip)
 
     return resultado
 
