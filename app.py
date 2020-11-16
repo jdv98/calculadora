@@ -1,7 +1,8 @@
 from flask import Flask, render_template, jsonify, json
 from config import DevelopmentConfig
-import addressClasses as ac
+import ipAddress as ac
 import subnetMask as sm
+import difusion as df
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
@@ -13,7 +14,7 @@ def page_not_found(e): #recibe como parametro el error
 @app.route('/ip-address-class/<x1>')
 def ip_address_class(x1=None):
 	if x1:
-		data = {'ipaddressclass':ac.ipAddressClass(x1)}
+		data = {'ipaddressclass':ac.ipAddress(x1)}
 		response = app.response_class(
 			response=json.dumps(data),
 			status=200,
@@ -28,6 +29,12 @@ def prefix_to_mask(x1=None, x2=None):
 		return jsonify({'masktoprefix':sm.maskToPrefix(x1)})
 	if x2:
 		return jsonify({'prefixtomask':sm.prefixToMask(x2)})
+
+@app.route('/difusion/<x1>')
+def ip_difusion(x1=None):
+	if x1:
+		return jsonify({'ipaddressclass':df.difusionIp(x1)})
+		
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8999)
