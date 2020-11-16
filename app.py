@@ -3,6 +3,7 @@ from config import DevelopmentConfig
 import ipAddress as ac
 import subnetMask as sm
 import difusion as df
+import secmentos as nh
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
@@ -33,8 +34,12 @@ def prefix_to_mask(x1=None, x2=None):
 @app.route('/difusion/<x1>')
 def ip_difusion(x1=None):
 	if x1:
-		return jsonify({'ipaddressclass':df.difusionIp(x1)})
-		
+		return jsonify({'ipaddressdifusion':df.difusionIp(x1)})
+
+@app.route('/network-host/<x1>')
+def network_host(x1=None):
+	if x1:
+		return jsonify({'networkhost':nh.networkHost(x1)})		
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8999)
