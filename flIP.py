@@ -8,7 +8,7 @@ def calcLastIP(ip):
     ip[-1]=str(int(ip[-1])-1)
     return '.'.join(ip)
 
-def calcSubred(ip,mask):
+def calcRed(ip,mask):
     ip=ip.split('.')
     mask=mask.split('.')
     resultado=[]
@@ -18,7 +18,7 @@ def calcSubred(ip,mask):
    
     return '.'.join(resultado)
 
-def calcBroadCast(ip,mask):
+def calcDifusion(ip,mask):
     ip=ip.split('.')
     mask=mask.split('.')
 
@@ -40,10 +40,10 @@ def calcBroadCast(ip,mask):
     return '.'.join(resultado)
 
 if( __name__=='__main__'):
-    ip="192.168.1.45"
-    mask="255.192.0.0"
-    subred=calcSubred(ip,mask)
-    broadcast= calcBroadCast(ip,mask)
-    print(calcFirstIP(subred))
-    print(calcLastIP(broadcast))
+    ip="172.30.239.145"
+    mask="255.255.192.0"
+    red=calcRed(ip,mask)
+    difusion= calcDifusion(ip,mask)
+    print(calcFirstIP(red))
+    print(calcLastIP(difusion))
 
