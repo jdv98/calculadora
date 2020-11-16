@@ -3,8 +3,8 @@ from config import DevelopmentConfig
 import ipAddress as ac
 import subnetMask as sm
 import difusion as df
-import secmentos as nh
-
+import segmentos as nh
+import  networkAddress as na
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
 
@@ -40,6 +40,12 @@ def ip_difusion(x1=None):
 def network_host(x1=None):
 	if x1:
 		return jsonify({'networkhost':nh.networkHost(x1)})		
+
+@app.route('/network-address/<x1>')
+def network_address(x1=None):
+	if x1:
+		return jsonify({'networkaddress':na.networkAddress(x1)})		
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8999)
